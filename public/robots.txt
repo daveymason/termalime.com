@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://termalime.com/sitemap.xml
