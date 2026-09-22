@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Download, Terminal, ShieldAlert, Cpu, Sparkles, Check, Copy, Leaf } from "lucide-react";
+import { Download, Check, Copy } from "lucide-react";
 import confetti from "canvas-confetti";
 
 export const Hero: React.FC = () => {
@@ -14,61 +14,67 @@ export const Hero: React.FC = () => {
 
   const handleDownload = () => {
     confetti({
-      particleCount: 80,
-      spread: 90,
-      origin: { y: 0.6 },
+      particleCount: 70,
+      spread: 80,
+      origin: { y: 0.55 },
       colors: ["#34d399", "#00ff91", "#a3e635", "#ffffff"],
     });
   };
 
   return (
-    <section className="section" style={{ paddingTop: "4.5rem", paddingBottom: "3rem" }}>
+    <section className="section" style={{ paddingTop: "3.5rem", paddingBottom: "4rem" }}>
       <div className="container" style={{ textAlign: "center" }}>
         
-        {/* Eyebrow Chip */}
-        <div style={{ display: "inline-block", marginBottom: "1.5rem" }}>
-          <div className="badge-pill">
-            <span className="pulse-dot" />
-            <span>TERMALIME v0.5.0 "ECO" RELEASE • TAURI 2.X &amp; RUST</span>
+        {/* Prominent Large Logo */}
+        <div style={{ marginBottom: "2rem" }}>
+          <div
+            style={{
+              display: "inline-block",
+              width: "150px",
+              height: "150px",
+              borderRadius: "32px",
+              overflow: "hidden",
+              boxShadow: "0 16px 50px rgba(0, 0, 0, 0.7), 0 0 40px rgba(0, 255, 145, 0.25)",
+              border: "2px solid rgba(52, 211, 153, 0.35)",
+              background: "#031409",
+              transition: "transform 0.3s ease, box-shadow 0.3s ease",
+            }}
+          >
+            <img
+              src="/assets/icon.png"
+              alt="Termalime (Lime) Logo"
+              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+            />
           </div>
         </div>
 
-        {/* Main Heading */}
-        <h1 style={{ maxWidth: "1050px", margin: "0 auto 1.5rem" }}>
-          Where Terminal Muscle Meets{" "}
-          <span className="text-lime-gradient">Local Intelligence.</span>
+        {/* Clean Headline */}
+        <h1 style={{ maxWidth: "860px", margin: "0 auto 1.2rem", fontSize: "clamp(2.4rem, 5vw, 3.8rem)" }}>
+          The Local AI <span className="text-lime-gradient">Terminal Cockpit</span>
         </h1>
 
-        {/* Subtitle */}
-        <p style={{ maxWidth: "780px", margin: "0 auto 2.5rem", fontSize: "1.2rem", lineHeight: "1.7" }}>
-          Stop alt-tabbing between your shell and cloud AI chat. <strong style={{ color: "#fff" }}>Termalime</strong> is a desktop cockpit that fuses an xterm PTY emulator with a zero-latency local LLM sidecar. Zero API keys. Zero cloud fees. Proactive preflight safety checks and real-time hardware telemetry.
+        {/* Concise Description */}
+        <p style={{ maxWidth: "680px", margin: "0 auto 2.2rem", fontSize: "1.18rem", lineHeight: "1.65", color: "var(--text-secondary)" }}>
+          Termalime is an open source desktop terminal that fuses a high-performance, multi-tab PTY emulator with a private local LLM sidecar powered by Ollama. Zero cloud latency, zero API keys, proactive command preflight safety, and real-time hardware telemetry.
         </p>
 
-        {/* Primary CTA Row */}
+        {/* Primary Action Button */}
         <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", alignItems: "center", gap: "1rem", marginBottom: "2rem" }}>
-          
-          <div style={{ position: "relative" }}>
-            <a
-              href="https://github.com/daveymason/Termalime/releases"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={handleDownload}
-              className="btn-tactile-key"
-              style={{ fontSize: "1.1rem", padding: "1rem 2.2rem" }}
-            >
-              <Download size={20} />
-              <span>Download Free v0.5.0</span>
-            </a>
-          </div>
-
-          <a href="#simulator" className="btn-tactile-secondary" style={{ fontSize: "1.1rem", padding: "1rem 2rem" }}>
-            <Terminal size={19} style={{ color: "var(--lime-bright)" }} />
-            <span>Launch Cockpit Demo</span>
+          <a
+            href="https://github.com/daveymason/Termalime/releases"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={handleDownload}
+            className="btn-tactile-key"
+            style={{ fontSize: "1.1rem", padding: "0.95rem 2.2rem" }}
+          >
+            <Download size={19} />
+            <span>Download v0.5.0</span>
           </a>
         </div>
 
-        {/* Quick Install Pill */}
-        <div style={{ display: "inline-flex", alignItems: "center", gap: "10px", margin: "0 auto 2.8rem" }}>
+        {/* Copyable Quick Install */}
+        <div style={{ display: "inline-flex", alignItems: "center", gap: "10px", margin: "0 auto 4rem" }}>
           <div className="code-pill">
             <span style={{ color: "var(--text-muted)", userSelect: "none" }}>$</span>
             <span>{installCommand}</span>
@@ -78,40 +84,30 @@ export const Hero: React.FC = () => {
               title="Copy installation command"
               aria-label="Copy installation command"
             >
-              {copied ? <Check size={15} style={{ color: "var(--lime-bright)" }} /> : <Copy size={15} />}
+              {copied ? <Check size={14} style={{ color: "var(--lime-bright)" }} /> : <Copy size={14} />}
             </button>
           </div>
         </div>
 
-        {/* Trust & Spec Badges */}
-        <div
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "center",
-            gap: "1.2rem",
-            maxWidth: "960px",
-            margin: "0 auto",
-          }}
-        >
-          <div className="badge-pill" style={{ textTransform: "none", color: "var(--text-secondary)", borderColor: "rgba(255,255,255,0.08)", background: "rgba(255,255,255,0.02)" }}>
-            <Sparkles size={14} style={{ color: "var(--lime-bright)" }} />
-            <span>100% Private (Ollama Local Inference)</span>
-          </div>
-
-          <div className="badge-pill" style={{ textTransform: "none", color: "var(--text-secondary)", borderColor: "rgba(255,255,255,0.08)", background: "rgba(255,255,255,0.02)" }}>
-            <ShieldAlert size={14} style={{ color: "#38bdf8" }} />
-            <span>Heuristic Preflight Safety Interceptor</span>
-          </div>
-
-          <div className="badge-pill" style={{ textTransform: "none", color: "var(--text-secondary)", borderColor: "rgba(255,255,255,0.08)", background: "rgba(255,255,255,0.02)" }}>
-            <Cpu size={14} style={{ color: "#cffd53" }} />
-            <span>Sub-Millisecond Rust PTY Streams</span>
-          </div>
-
-          <div className="badge-pill" style={{ textTransform: "none", color: "var(--text-secondary)", borderColor: "rgba(255,255,255,0.08)", background: "rgba(255,255,255,0.02)" }}>
-            <Leaf size={14} style={{ color: "var(--lime-bright)" }} />
-            <span>Eco-Impact: Real-time CO₂ &amp; Water Saved</span>
+        {/* Real Product Screenshot in Clean Minimal Frame */}
+        <div style={{ maxWidth: "1080px", margin: "0 auto" }}>
+          <div className="screenshot-hardware-frame">
+            <div className="screenshot-titlebar">
+              <div className="window-dots">
+                <span className="window-dot window-dot--close" />
+                <span className="window-dot window-dot--min" />
+                <span className="window-dot window-dot--max" />
+              </div>
+              <span className="screenshot-title">Termalime — Split Workspace &amp; Saved Commands</span>
+              <span style={{ fontSize: "0.7rem", color: "var(--lime-bright)", fontFamily: "var(--font-mono)" }}>
+                TAURI 2.X • LINUX
+              </span>
+            </div>
+            <img
+              src="/assets/screenshot-main.png"
+              alt="Termalime Main Split Cockpit Screenshot"
+              className="screenshot-img"
+            />
           </div>
         </div>
 
