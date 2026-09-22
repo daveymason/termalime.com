@@ -11,14 +11,10 @@ export const Footer: React.FC = () => {
           {/* Brand Info */}
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "1rem" }}>
-              <div className="brand-icon-box">
-                <img src="/assets/key-icon.png" alt="Termalime icon" width="38" height="38" />
-              </div>
-              <span style={{ fontSize: "1.3rem", fontWeight: 800, color: "#fff" }}>Termalime</span>
-              <span className="brand-tag">Soon Lime</span>
+              <span style={{ fontSize: "1.35rem", fontWeight: 800, color: "#fff" }}>Termalime</span>
             </div>
             <p style={{ fontSize: "0.9rem", color: "var(--text-secondary)", lineHeight: "1.6", maxWidth: "340px", marginBottom: "1.2rem" }}>
-              The high-performance desktop cockpit fusing an xterm PTY emulator with private local LLM intelligence. 100% open source and privacy first.
+              The high-performance desktop cockpit fusing an xterm PTY emulator with Lime, a tailor-made local LLM. 100% open source and privacy-first.
             </p>
             <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
               <a
@@ -44,34 +40,23 @@ export const Footer: React.FC = () => {
                 <a href="#features" className="nav-link" style={{ fontSize: "0.88rem" }}>Features</a>
               </li>
               <li>
-                <a href="#simulator" className="nav-link" style={{ fontSize: "0.88rem" }}>Interactive Cockpit</a>
+                <a href="#gallery" className="nav-link" style={{ fontSize: "0.88rem" }}>App Showcase</a>
               </li>
               <li>
-                <a href="#context-bar" className="nav-link" style={{ fontSize: "0.88rem", color: "var(--lime-bright)" }}>
-                  Context Bar Telemetry
-                </a>
+                <a href="#roadmap" className="nav-link" style={{ fontSize: "0.88rem" }}>Releases</a>
               </li>
               <li>
-                <a href="#preflight" className="nav-link" style={{ fontSize: "0.88rem" }}>Preflight Guard</a>
-              </li>
-              <li>
-                <a href="#gallery" className="nav-link" style={{ fontSize: "0.88rem" }}>Product Gallery</a>
+                <a href="#download" className="nav-link" style={{ fontSize: "0.88rem", color: "var(--lime-bright)" }}>Downloads</a>
               </li>
             </ul>
           </div>
 
-          {/* Navigation Column 2: Tech & Eco */}
+          {/* Navigation Column 2: Ecosystem */}
           <div>
             <h4 style={{ fontSize: "0.85rem", textTransform: "uppercase", letterSpacing: "0.08em", color: "#fff", marginBottom: "1rem" }}>
               Ecosystem
             </h4>
             <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.6rem" }}>
-              <li>
-                <a href="#eco-impact" className="nav-link" style={{ fontSize: "0.88rem" }}>Eco Calculator</a>
-              </li>
-              <li>
-                <a href="#roadmap" className="nav-link" style={{ fontSize: "0.88rem" }}>Release Roadmap</a>
-              </li>
               <li>
                 <a
                   href="https://github.com/daveymason/Termalime/releases"
@@ -100,7 +85,7 @@ export const Footer: React.FC = () => {
           {/* Privacy & Principles */}
           <div>
             <h4 style={{ fontSize: "0.85rem", textTransform: "uppercase", letterSpacing: "0.08em", color: "#fff", marginBottom: "1rem" }}>
-              Principles
+              Privacy &amp; Safety
             </h4>
             <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem", fontSize: "0.82rem", color: "var(--text-muted)" }}>
               <div style={{ display: "flex", alignItems: "flex-start", gap: "6px" }}>
@@ -133,8 +118,8 @@ export const Footer: React.FC = () => {
           <div>
             © 2026 Termalime. Created by Davey Mason &amp; open-source contributors. MIT License.
           </div>
-          <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-            <span>Google Material 3 surfaces meets Don Norman cognitive design.</span>
+          <div style={{ color: "var(--text-muted)" }}>
+            Built with Tauri 2.x &amp; Rust.
           </div>
         </div>
       </div>

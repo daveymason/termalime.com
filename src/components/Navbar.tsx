@@ -25,34 +25,18 @@ export const Navbar: React.FC = () => {
         }}
         aria-label="Main Navigation"
       >
-        {/* Simple Text Brand (No Logo in nav as requested) */}
+        {/* Simple Clean Brand */}
         <a
           href="#"
           style={{
             fontFamily: "var(--font-display)",
-            fontSize: "1.2rem",
+            fontSize: "1.25rem",
             fontWeight: 800,
             letterSpacing: "-0.02em",
             color: "#fff",
-            display: "flex",
-            alignItems: "center",
-            gap: "8px",
           }}
         >
-          <span>Termalime</span>
-          <span
-            style={{
-              fontSize: "0.7rem",
-              fontWeight: 600,
-              padding: "2px 7px",
-              borderRadius: "999px",
-              background: "rgba(52, 211, 153, 0.12)",
-              color: "var(--lime-bright)",
-              border: "1px solid rgba(52, 211, 153, 0.25)",
-            }}
-          >
-            Soon Lime
-          </span>
+          Termalime
         </a>
 
         {/* Minimal Nav Actions: Just GitHub and Download */}

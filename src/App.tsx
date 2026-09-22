@@ -2,7 +2,6 @@ import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
 import { FeaturesSection } from "./components/FeaturesSection";
 import { ProductGallery } from "./components/ProductGallery";
-import { PreflightGuard } from "./components/PreflightGuard";
 import { ReleaseRoadmap } from "./components/ReleaseRoadmap";
 import { DownloadCTA } from "./components/DownloadCTA";
 import { Footer } from "./components/Footer";
@@ -26,7 +25,6 @@ export function App() {
         <Hero />
         <FeaturesSection />
         <ProductGallery />
-        <PreflightGuard />
         <ReleaseRoadmap />
         <DownloadCTA />
       </main>

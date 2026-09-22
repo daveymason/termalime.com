@@ -8,7 +8,6 @@ interface GalleryItem {
   imgSrc: string;
   tag: string;
   description: string;
-  donNormanConcept: string;
 }
 
 export const ProductGallery: React.FC = () => {
@@ -16,26 +15,13 @@ export const ProductGallery: React.FC = () => {
 
   const galleryItems: GalleryItem[] = [
     {
-      id: "cockpit",
-      title: "The Split-Pane Desktop Cockpit",
-      subtitle: "Full PTY Terminal + Quick Access Commands + Lime Copilot",
-      imgSrc: "/assets/screenshot-main.png",
-      tag: "CORE WORKSPACE",
-      description:
-        "The primary workstation fuses an xterm-powered PTY terminal with a persistent local Ollama copilot. The left popover houses reusable saved commands with one-click play buttons, while the right panel streams assistant explanations in real time.",
-      donNormanConcept:
-        "Natural Mapping: Human commands and active terminal sessions on the left, machine reasoning on the right, keeping mental contexts separated but unified.",
-    },
-    {
       id: "control-room",
       title: "Control Room: Termalime Settings",
       subtitle: "Font Size, Preflight Safety, and Model Configuration",
       imgSrc: "/assets/screenshot-settings.png",
       tag: "SYSTEM CONFIG",
       description:
-        "A sleek control center allowing instant adjustment of terminal font size, toggling distraction-free terminal mode, enabling automatic terminal tail snapshot context injection, and choosing which local Ollama model powers preflight checks.",
-      donNormanConcept:
-        "Affordance & Visibility: High-contrast toggle switches that clearly signify ON/OFF state and sliders with immediate numerical feedback.",
+        "A sleek control center allowing instant adjustment of terminal font size, toggling distraction-free terminal mode, enabling automatic terminal tail snapshot context injection, and choosing which local model powers preflight checks.",
     },
     {
       id: "splash",
@@ -44,43 +30,30 @@ export const ProductGallery: React.FC = () => {
       imgSrc: "/assets/screenshot-splash.png",
       tag: "STARTUP HYDRATION",
       description:
-        "Upon launch, Termalime initializes the underlying Tauri Rust PTY registry, checks local Ollama model daemon connectivity, and mounts session threads before fading seamlessly into the primary cockpit.",
-      donNormanConcept:
-        "System Status Feedback: Reassures the user that background services (PTY subsystem and Ollama bridge) are actively loading rather than hanging.",
-    },
-    {
-      id: "context-bar",
-      title: "High-Precision Context Bar",
-      subtitle: "Vitals, Network, Hardware & Eco Impact",
-      imgSrc: "/assets/screenshot-contextbar.png",
-      tag: "MISSION CONTROL",
-      description:
-        "The anchor of the application. Provides at-a-glance host context (AVCompu @adman-voids), local network IP, shell type, CPU load, memory utilization, real-time CO2 / water savings, and one-click working directory copy.",
-      donNormanConcept:
-        "Signifiers: Low-cognitive-load icons paired with unambiguous telemetry values, placed where eyes naturally look for status.",
+        "Upon launch, Termalime initializes the underlying Tauri Rust PTY registry, checks local model daemon connectivity, and mounts session threads before fading seamlessly into the primary cockpit.",
     },
   ];
 
   return (
-    <section id="gallery" className="section">
+    <section id="gallery" className="section" style={{ paddingTop: "2rem", paddingBottom: "5rem" }}>
       <div className="container">
         
         {/* Section Header */}
         <div className="section-header">
           <div className="badge-pill" style={{ marginBottom: "1rem" }}>
             <Eye size={14} />
-            <span>REAL PRODUCT SHOWCASE</span>
+            <span>APP SHOWCASE</span>
           </div>
           <h2>
-            Designed for <span className="text-lime-gradient">Speed, Safety &amp; Focus</span>
+            Built for Focused <span className="text-lime-gradient">Developer Workflows</span>
           </h2>
           <p>
-            Inspect real screenshots of Termalime in production. Every pixel, toggle, and telemetry badge has been engineered according to Don Norman's principles of discoverability and tactile feedback.
+            A closer look at Termalime's interface — from granular controls and model selection in the Control Room to rapid session startup.
           </p>
         </div>
 
         {/* Gallery Grid */}
-        <div className="grid-2" style={{ gap: "2.5rem" }}>
+        <div className="grid-2" style={{ gap: "2.5rem", maxWidth: "960px", margin: "0 auto" }}>
           {galleryItems.map((item) => (
             <div
               key={item.id}
@@ -163,24 +136,8 @@ export const ProductGallery: React.FC = () => {
               <div style={{ padding: "1.4rem", flex: 1, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
                 <div>
                   <h3 style={{ fontSize: "1.2rem", margin: "0 0 0.5rem", color: "#fff" }}>{item.title}</h3>
-                  <p style={{ fontSize: "0.9rem", color: "var(--text-secondary)", lineHeight: "1.6", margin: "0 0 1rem" }}>
+                  <p style={{ fontSize: "0.9rem", color: "var(--text-secondary)", lineHeight: "1.6", margin: 0 }}>
                     {item.description}
-                  </p>
-                </div>
-
-                <div
-                  style={{
-                    padding: "0.8rem",
-                    borderRadius: "8px",
-                    background: "rgba(52, 211, 153, 0.05)",
-                    border: "1px solid rgba(52, 211, 153, 0.15)",
-                  }}
-                >
-                  <p style={{ fontSize: "0.72rem", textTransform: "uppercase", letterSpacing: "0.06em", color: "var(--lime-bright)", margin: "0 0 4px", fontWeight: 700 }}>
-                    Don Norman Principle
-                  </p>
-                  <p style={{ fontSize: "0.82rem", color: "var(--text-muted)", margin: 0, lineHeight: "1.4" }}>
-                    {item.donNormanConcept}
                   </p>
                 </div>
               </div>
@@ -206,7 +163,7 @@ export const ProductGallery: React.FC = () => {
           >
             <div
               style={{
-                maxWidth: "1100px",
+                maxWidth: "1000px",
                 width: "100%",
                 background: "#040b06",
                 border: "1px solid rgba(52, 211, 153, 0.4)",

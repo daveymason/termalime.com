@@ -1,6 +1,6 @@
 /* =====================================================================
-   TERMALIME (LIME) DESIGN SYSTEM
-   Philosophy: Google Material 3 meets Don Norman Cockpit
+   TERMALIME DESIGN SYSTEM
+   Modern Dark Obsidian Cockpit with Luminous Lime Accents
    ===================================================================== */
 
 :root {
@@ -225,7 +225,7 @@ a {
   50% { opacity: 0.4; transform: scale(0.85); }
 }
 
-/* Don Norman Tactile Buttons & Keycaps */
+/* Tactile Cockpit Buttons & Keycaps */
 .btn-tactile-key {
   position: relative;
   display: inline-flex;

@@ -22,7 +22,7 @@ export const FeaturesSection: React.FC = () => {
     {
       icon: <Lock size={22} style={{ color: "#38bdf8" }} />,
       title: "100% Private Local LLMs",
-      desc: "Connect directly to local Ollama models (k9/Doggo, Llama 3, Mistral). Zero cloud API fees, zero prompt logging, and zero external network latency.",
+      desc: "Powered by Lime, a tailor-made local model trained for terminal commands, or any local Ollama model. Zero cloud API fees, zero prompt logging, and zero network latency.",
     },
     {
       icon: <ShieldAlert size={22} style={{ color: "#f87171" }} />,
@@ -112,7 +112,7 @@ export const FeaturesSection: React.FC = () => {
             />
           </div>
 
-          {/* Context Bar Features 5-Item Grid */}
+          {/* Context Bar Features: 5 Items Matching Exact Left-to-Right Order of the Bar */}
           <div
             style={{
               display: "grid",
@@ -120,53 +120,58 @@ export const FeaturesSection: React.FC = () => {
               gap: "1.2rem",
             }}
           >
+            {/* 1. Far Left: Settings & Commands */}
+            <div style={{ padding: "0.85rem", background: "rgba(0, 0, 0, 0.35)", borderRadius: "8px", border: "1px solid rgba(255, 255, 255, 0.05)" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "4px", color: "var(--lime-bright)" }}>
+                <Sliders size={15} />
+                <strong style={{ fontSize: "0.85rem" }}>1. Quick Launchers</strong>
+              </div>
+              <p style={{ fontSize: "0.78rem", color: "var(--text-muted)", margin: 0, lineHeight: "1.4" }}>
+                One-click access to Settings control room and Saved Commands drawer.
+              </p>
+            </div>
+
+            {/* 2. System & Host: AVCompu, @user, IP, Shell */}
             <div style={{ padding: "0.85rem", background: "rgba(0, 0, 0, 0.35)", borderRadius: "8px", border: "1px solid rgba(255, 255, 255, 0.05)" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "4px", color: "#38bdf8" }}>
                 <Monitor size={15} />
-                <strong style={{ fontSize: "0.85rem" }}>System &amp; Network</strong>
+                <strong style={{ fontSize: "0.85rem" }}>2. System &amp; Network</strong>
               </div>
               <p style={{ fontSize: "0.78rem", color: "var(--text-muted)", margin: 0, lineHeight: "1.4" }}>
                 Live hostname (AVCompu), username, LAN IP address, and shell binary.
               </p>
             </div>
 
+            {/* 3. Hardware Pulse: CPU % & Memory % */}
             <div style={{ padding: "0.85rem", background: "rgba(0, 0, 0, 0.35)", borderRadius: "8px", border: "1px solid rgba(255, 255, 255, 0.05)" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "4px", color: "#fbbf24" }}>
                 <Cpu size={15} />
-                <strong style={{ fontSize: "0.85rem" }}>Hardware Pulse</strong>
+                <strong style={{ fontSize: "0.85rem" }}>3. Hardware Pulse</strong>
               </div>
               <p style={{ fontSize: "0.78rem", color: "var(--text-muted)", margin: 0, lineHeight: "1.4" }}>
                 Low-overhead CPU and Memory load %, automatically paused when minimized.
               </p>
             </div>
 
+            {/* 4. Eco Telemetry: CO2 & Water Saved */}
             <div style={{ padding: "0.85rem", background: "rgba(0, 0, 0, 0.35)", borderRadius: "8px", border: "1px solid rgba(255, 255, 255, 0.05)" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "4px", color: "var(--lime-bright)" }}>
                 <Leaf size={15} />
-                <strong style={{ fontSize: "0.85rem" }}>Eco Tracking</strong>
+                <strong style={{ fontSize: "0.85rem" }}>4. Eco Tracking</strong>
               </div>
               <p style={{ fontSize: "0.78rem", color: "var(--text-muted)", margin: 0, lineHeight: "1.4" }}>
                 Quantifies real-time CO₂ emissions and water cooling spared vs cloud LLMs.
               </p>
             </div>
 
+            {/* 5. Far Right: CWD & 1-Click Copy */}
             <div style={{ padding: "0.85rem", background: "rgba(0, 0, 0, 0.35)", borderRadius: "8px", border: "1px solid rgba(255, 255, 255, 0.05)" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "4px", color: "#cffd53" }}>
                 <Copy size={15} />
-                <strong style={{ fontSize: "0.85rem" }}>CWD Clipboard</strong>
+                <strong style={{ fontSize: "0.85rem" }}>5. CWD Clipboard</strong>
               </div>
               <p style={{ fontSize: "0.78rem", color: "var(--text-muted)", margin: 0, lineHeight: "1.4" }}>
                 Displays active working directory with instantaneous 1-click clipboard copy.
-              </p>
-            </div>
-
-            <div style={{ padding: "0.85rem", background: "rgba(0, 0, 0, 0.35)", borderRadius: "8px", border: "1px solid rgba(255, 255, 255, 0.05)" }}>
-              <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "4px", color: "var(--lime-bright)" }}>
-                <Sliders size={15} />
-                <strong style={{ fontSize: "0.85rem" }}>Quick Launchers</strong>
-              </div>
-              <p style={{ fontSize: "0.78rem", color: "var(--text-muted)", margin: 0, lineHeight: "1.4" }}>
-                One-click access to Settings control room and Saved Commands drawer.
               </p>
             </div>
           </div>
@@ -181,38 +186,29 @@ export const FeaturesSection: React.FC = () => {
               style={{
                 display: "flex",
                 flexDirection: "column",
-                justifyContent: "space-between",
                 padding: "1.8rem",
               }}
             >
-              <div>
-                <div
-                  style={{
-                    width: "44px",
-                    height: "44px",
-                    borderRadius: "10px",
-                    background: "rgba(52, 211, 153, 0.08)",
-                    border: "1px solid rgba(52, 211, 153, 0.2)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    marginBottom: "1rem",
-                  }}
-                >
-                  {f.icon}
-                </div>
-
-                <h3 style={{ fontSize: "1.2rem", margin: "0 0 0.5rem", color: "#fff" }}>{f.title}</h3>
-                <p style={{ fontSize: "0.92rem", color: "var(--text-secondary)", lineHeight: "1.6", margin: 0 }}>
-                  {f.desc}
-                </p>
+              <div
+                style={{
+                  width: "44px",
+                  height: "44px",
+                  borderRadius: "10px",
+                  background: "rgba(52, 211, 153, 0.08)",
+                  border: "1px solid rgba(52, 211, 153, 0.2)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  marginBottom: "1rem",
+                }}
+              >
+                {f.icon}
               </div>
 
-              <div style={{ marginTop: "1.5rem", paddingTop: "0.75rem", borderTop: "1px solid rgba(255, 255, 255, 0.05)" }}>
-                <span style={{ fontSize: "0.75rem", color: "var(--lime-bright)", fontFamily: "var(--font-mono)" }}>
-                  ✓ In Termalime v0.5.0
-                </span>
-              </div>
+              <h3 style={{ fontSize: "1.2rem", margin: "0 0 0.5rem", color: "#fff" }}>{f.title}</h3>
+              <p style={{ fontSize: "0.92rem", color: "var(--text-secondary)", lineHeight: "1.6", margin: 0 }}>
+                {f.desc}
+              </p>
             </div>
           ))}
         </div>

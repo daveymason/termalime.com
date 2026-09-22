@@ -1,19 +1,19 @@
 import React from "react";
-import { Tag, Shield, Sparkles, Leaf, Cpu, Layers } from "lucide-react";
+import { Tag, Shield, Leaf, Cpu, Layers } from "lucide-react";
 
 export const ReleaseRoadmap: React.FC = () => {
   const releases = [
     {
       version: "v0.5.0",
       codename: "Eco",
-      tag: "CURRENT RELEASE",
+      tag: "LATEST RELEASE",
       isCurrent: true,
       icon: <Leaf size={18} style={{ color: "var(--lime-bright)" }} />,
       highlights: [
         "Eco Impact Engine: Live CO₂ and water savings telemetry in Context Bar and Settings.",
         "Lifetime eco totals with per-session tracking and reset functionality.",
         "Fixed terminal freeze on large data transfers with UTF-8 boundary batching.",
-        "Eliminated chat streaming event duplication; massive speed boost on long model outputs.",
+        "Eliminated chat streaming event duplication; major speed gain on long responses.",
         "Optimized sysinfo context polling with background tick suppression.",
       ],
     },
@@ -40,7 +40,7 @@ export const ReleaseRoadmap: React.FC = () => {
       highlights: [
         "Introduced the bottom Context Bar for host and network identity.",
         "Added Quick Access panel to create, edit, run, and delete saved commands.",
-        "Auto-reconnect bridge for local Ollama models (e.g. Ministral).",
+        "Auto-reconnect bridge for local Ollama models.",
       ],
     },
     {
@@ -50,39 +50,27 @@ export const ReleaseRoadmap: React.FC = () => {
       isCurrent: false,
       icon: <Shield size={18} style={{ color: "#f87171" }} />,
       highlights: [
-        "Introduced the first Preflight checker intercepting malicious pasted commands.",
-        "Added Control Room settings drawer for font size and bot persona tweaking.",
-      ],
-    },
-    {
-      version: "Lime 1.0",
-      codename: "Genesis",
-      tag: "UPCOMING",
-      isUpcoming: true,
-      icon: <Sparkles size={18} style={{ color: "#a855f7" }} />,
-      highlights: [
-        "Full brand evolution: Termalime becomes 'Lime'.",
-        "Plugin ecosystem for custom LLM prompts and shell automation hooks.",
-        "Built-in one-click local model orchestrator and auto-pull.",
+        "Introduced the Preflight checker intercepting malicious pasted commands.",
+        "Added Control Room settings drawer for font size and bot tweaking.",
       ],
     },
   ];
 
   return (
-    <section id="roadmap" className="section">
+    <section id="roadmap" className="section" style={{ paddingTop: "2rem", paddingBottom: "5rem" }}>
       <div className="container">
         
         {/* Section Header */}
         <div className="section-header">
           <div className="badge-pill" style={{ marginBottom: "1rem" }}>
             <Tag size={14} />
-            <span>RELEASE TRAIN &amp; EVOLUTION</span>
+            <span>RELEASE HISTORY</span>
           </div>
           <h2>
-            From <span className="text-lime-gradient">Termalime to Lime</span>
+            Termalime <span className="text-lime-gradient">Changelog</span>
           </h2>
           <p>
-            Track the iterative evolution of our desktop cockpit. Every release has focused on hardening performance, expanding safety heuristics, and reducing cognitive friction.
+            Track the releases and optimizations of Termalime as new features, performance improvements, and security hardening roll out.
           </p>
         </div>
 
@@ -113,13 +101,9 @@ export const ReleaseRoadmap: React.FC = () => {
                     borderRadius: "50%",
                     background: rel.isCurrent
                       ? "linear-gradient(135deg, #10b981, #059669)"
-                      : rel.isUpcoming
-                      ? "rgba(168, 85, 247, 0.2)"
                       : "rgba(15, 23, 42, 0.9)",
                     border: rel.isCurrent
                       ? "2px solid #fff"
-                      : rel.isUpcoming
-                      ? "2px dashed #a855f7"
                       : "2px solid rgba(52, 211, 153, 0.3)",
                     display: "flex",
                     alignItems: "center",
@@ -160,10 +144,8 @@ export const ReleaseRoadmap: React.FC = () => {
                         borderRadius: "999px",
                         background: rel.isCurrent
                           ? "rgba(52, 211, 153, 0.2)"
-                          : rel.isUpcoming
-                          ? "rgba(168, 85, 247, 0.2)"
                           : "rgba(255, 255, 255, 0.06)",
-                        color: rel.isCurrent ? "var(--lime-bright)" : rel.isUpcoming ? "#d8b4fe" : "var(--text-muted)",
+                        color: rel.isCurrent ? "var(--lime-bright)" : "var(--text-muted)",
                         border: rel.isCurrent ? "1px solid rgba(52, 211, 153, 0.4)" : "1px solid rgba(255, 255, 255, 0.1)",
                       }}
                     >
