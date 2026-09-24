@@ -1,0 +1,125 @@
+# Termalime: Comprehensive Product & Technical Documentation
+
+Termalime is a high-performance, open-source desktop terminal emulator fusing multi-tab pseudo-terminal (PTY) emulation with an integrated offline local AI assistant.
+
+Website: https://termalime.com
+GitHub: https://github.com/daveymason/Termalime
+License: MIT
+Primary Developer: Davey Mason
+
+---
+
+## 1. Architectural Overview
+
+Termalime is engineered using a lightweight desktop architecture:
+- **Desktop Shell**: Tauri 2.x with Rust backend and native WebKit WebView. Uses a fraction of the memory footprint of Electron-based terminal wrappers.
+- **Terminal Subsystem**: `portable-pty` managing POSIX pseudo-terminals with asynchronous Tokio channels for non-blocking I/O.
+- **Terminal Rendering**: `@xterm/xterm` (xterm.js) with `@xterm/addon-fit` and `@xterm/addon-search`.
+- **Local AI Bridge**: Asynchronous `reqwest` HTTP streaming directly communicating with local Ollama daemons on `http://127.0.0.1:11434/api/chat`.
+- **UI Framework**: React 18, TypeScript, Tailwind CSS, `framer-motion`, and `react-resizable-panels`.
+
+---
+
+## 2. Key Features
+
+### Split-Pane Cockpit
+- Persistent, resizable side-by-side layout holding the active terminal emulator on the left and the AI copilot on the right.
+- Chat panel can be toggled on/off in Settings or auto-mounted when triggering error diagnostics.
+
+### Interactive AI Code Blocks (Chat → Shell)
+- Shell snippets produced by the assistant feature dedicated action buttons:
+  - **Run in Terminal**: Forwards snippet directly to the active shell session. If Preflight is active, dangerous commands trigger an analysis modal before running.
+  - **Insert at Prompt**: Types snippet into the shell without executing (`\r`), allowing argument review.
+  - **Copy Code**: Copies snippet to system clipboard with instant visual feedback.
+
+### 1-Click Error & Output Diagnosis (`Ctrl+Shift+E`)
+- Clicking "Explain" in the Context Bar or pressing `Ctrl+Shift+E` in the terminal extracts recent traces or highlighted text.
+- Formulates a diagnostic prompt to Lime Copilot, which returns error explanations and exact commands to fix or proceed.
+
+### Preflight Security Checker
+- Evaluates shell commands before execution using a two-tier hybrid engine:
+  - **Tier 1 (Rust Heuristics)**: Calculates a suspicion score by scanning tokens for `sudo`, dangerous `rm -rf`, piped shell interpreters (`curl | sh`), network sockets (`/dev/tcp`), and raw IPv4 tokens.
+  - **Tier 2 (AI SOC Analysis)**: If score >= 10, queries a local LLM prompt acting as a security analyst. The model returns structured risk reasoning and safe alternative suggestions.
+  - **Resilient Fallback**: Includes self-healing JSON repair loops and plain-text fallbacks if small local models return malformed responses.
+
+### In-Buffer Terminal Search (`Ctrl+F`)
+- Integrated floating search overlay supporting incremental find, case-sensitivity toggling, and previous/next match cycling.
+
+### Multi-Tab Subsystem with Smart CWD
+- Open unlimited concurrent terminal tabs.
+- New tabs automatically inherit the working directory of the currently active session.
+- Double-click any tab title to rename it inline.
+- Truecolor enabled (`COLORTERM=truecolor`) for modern CLI tools like `bat`, `eza`, and `starship`.
+
+### Real-Time Context Bar
+- Fixed footer bar displaying live system telemetry:
+  - Hostname & current username
+  - Active Git branch (cached with 30s TTL to prevent disk thrashing)
+  - Local LAN IP address & shell binary
+  - Real-time CPU and Memory usage % (automatically paused when window is minimized)
+  - Current working directory (CWD) with 1-click clipboard copy
+
+---
+
+## 3. Installation & Getting Started
+
+### Ubuntu / Debian (.deb)
+```bash
+sudo apt update
+sudo apt install ./Termalime_0.6.0_amd64.deb
+```
+
+### Standalone AppImage (Universal Linux)
+```bash
+chmod +x Termalime_0.6.0_amd64.AppImage
+./Termalime_0.6.0_amd64.AppImage
+```
+
+### Fedora / RHEL (.rpm)
+```bash
+sudo rpm -i Termalime-0.6.0-1.x86_64.rpm
+```
+
+### macOS & Windows
+- macOS: Mount `Termalime_0.6.0_aarch64.dmg` and drag to Applications.
+- Windows: Run `Termalime_0.6.0_x64-setup.exe` or `Termalime_0.6.0_x64_en-US.msi`.
+
+### AI Engine Setup (Ollama)
+Termalime connects to a local Ollama instance:
+```bash
+# Install Ollama (Linux/macOS)
+curl -fsSL https://ollama.com/install.sh | sh
+
+# Pull your preferred model
+ollama run llama3
+# or
+ollama run qwen2.5-coder
+```
+When Termalime launches, it automatically discovers all installed local models and displays them in the chat model selector.
+
+---
+
+## 4. Keyboard Shortcuts
+
+- `Ctrl + F`: Open in-buffer terminal search bar.
+- `Ctrl + Shift + E`: Capture recent terminal output and prompt Lime Copilot for error explanation.
+- `Enter` (in search bar): Jump to next match.
+- `Shift + Enter` (in search bar): Jump to previous match.
+- `Escape` (in search bar): Close search bar and restore terminal focus.
+- Double-Click Tab: Rename terminal tab in-place.
+
+---
+
+## 5. Frequently Asked Questions (FAQ)
+
+### Does Termalime send my shell commands to cloud servers?
+No. Termalime is built for 100% offline, air-gapped private usage. AI communication takes place exclusively over `http://127.0.0.1:11434` with your local Ollama installation. No telemetry, prompt logs, or API keys leave your machine.
+
+### Which AI models are supported?
+Any model supported by Ollama can be used with Termalime, including Llama 3, Qwen 2.5 Coder, Mistral, Gemma 2/3, DeepSeek Coder, Phi-3, and custom GGUF models loaded into Ollama.
+
+### Can Termalime run without Ollama?
+Yes. Termalime functions as a full-featured standalone terminal emulator. If Ollama is offline or uninstalled, the shell tabs and terminal emulator operate normally, and the chat panel displays an offline indicator.
+
+### Is Termalime free and open source?
+Yes, Termalime is licensed under the permissive MIT license.

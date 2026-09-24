@@ -8,11 +8,12 @@
     <title>Termalime — The Terminal with Built-in Local AI</title>
     <meta name="title" content="Termalime — The Terminal with Built-in Local AI" />
     <meta name="description" content="Termalime is an open-source desktop cockpit fusing a blazing-fast PTY terminal emulator with Lime, a tailor-made local LLM for shell intelligence. Built with Tauri 2.x and Rust." />
-    <meta name="keywords" content="terminal emulator, local LLM, AI terminal, Ollama, Tauri, Rust, developer cockpit, terminal tabs, preflight command safety, eco AI, private AI, Termalime, Lime LLM" />
+    <meta name="keywords" content="terminal emulator, local LLM, AI terminal, Ollama, Tauri, Rust, developer cockpit, terminal tabs, preflight command safety, eco AI, private AI, Termalime, Lime LLM, xterm.js" />
     <meta name="author" content="Davey Mason & Termalime Contributors" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="theme-color" content="#05060a" />
     <link rel="canonical" href="https://termalime.com/" />
+    <link rel="alternate" type="text/plain" href="https://termalime.com/llms.txt" title="LLM Documentation" />
 
     <!-- Open Graph / Facebook / LinkedIn / Discord -->
     <meta property="og:site_name" content="Termalime" />
@@ -20,8 +21,8 @@
     <meta property="og:url" content="https://termalime.com/" />
     <meta property="og:title" content="Termalime — The Terminal with Built-in Local AI" />
     <meta property="og:description" content="Fusing a high-performance terminal emulator with Lime, a tailor-made local AI sidecar. Zero API keys. Zero cloud latency. Built-in preflight safety and real-time hardware & eco telemetry." />
-    <meta property="og:image" content="https://termalime.com/assets/og-card.png" />
-    <meta property="og:image:secure_url" content="https://termalime.com/assets/og-card.png" />
+    <meta property="og:image" content="https://termalime.com/assets/og-card.png?v=0.6.0" />
+    <meta property="og:image:secure_url" content="https://termalime.com/assets/og-card.png?v=0.6.0" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -30,10 +31,13 @@
 
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@daveymason" />
+    <meta name="twitter:creator" content="@daveymason" />
     <meta name="twitter:url" content="https://termalime.com/" />
     <meta name="twitter:title" content="Termalime — The Terminal with Built-in Local AI" />
     <meta name="twitter:description" content="Fusing a high-performance terminal emulator with Lime, a tailor-made local AI sidecar. Zero API keys. Zero cloud latency. Built-in preflight safety and real-time hardware & eco telemetry." />
-    <meta name="twitter:image" content="https://termalime.com/assets/og-card.png" />
+    <meta name="twitter:image" content="https://termalime.com/assets/og-card.png?v=0.6.0" />
+    <meta name="twitter:image:src" content="https://termalime.com/assets/og-card.png?v=0.6.0" />
     <meta name="twitter:image:alt" content="Termalime — The Terminal with Built-in Local AI" />
 
     <!-- Favicon -->
@@ -46,37 +50,133 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet" />
 
-    <!-- Structured Data (JSON-LD) for SEO -->
+    <!-- Structured Data (JSON-LD) for SEO & Rich Results -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "Termalime",
-      "operatingSystem": "Linux, macOS, Windows",
-      "applicationCategory": "DeveloperApplication",
-      "description": "An open source terminal emulator cockpit fusing multi-tab PTY sessions with Lime, a tailor-made local LLM sidecar, intelligent preflight safety checks, and real-time eco impact telemetry.",
-      "url": "https://termalime.com",
-      "downloadUrl": "https://github.com/daveymason/Termalime/releases",
-      "license": "https://github.com/daveymason/Termalime/blob/main/LICENSE",
-      "softwareVersion": "0.5.0",
-      "offers": {
-        "@type": "Offer",
-        "price": "0.00",
-        "priceCurrency": "USD"
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Termalime",
+        "operatingSystem": "Linux, macOS, Windows",
+        "applicationCategory": "DeveloperApplication",
+        "description": "An open source desktop terminal emulator cockpit fusing multi-tab PTY sessions with Lime, a tailor-made local LLM sidecar, interactive AI code blocks, 1-click error diagnosis, preflight command safety, and real-time telemetry.",
+        "url": "https://termalime.com",
+        "downloadUrl": "https://github.com/daveymason/Termalime/releases",
+        "license": "https://github.com/daveymason/Termalime/blob/main/LICENSE",
+        "softwareVersion": "0.6.0",
+        "offers": {
+          "@type": "Offer",
+          "price": "0.00",
+          "priceCurrency": "USD"
+        },
+        "potentialAction": {
+          "@type": "DownloadAction",
+          "target": "https://github.com/daveymason/Termalime/releases"
+        },
+        "featureList": [
+          "Split-pane terminal emulator and local LLM chat cockpit",
+          "Interactive AI code blocks with Run in Terminal, Insert at Prompt, and Copy",
+          "1-Click Output & Error Diagnosis (Ctrl+Shift+E)",
+          "In-Buffer Terminal Search (Ctrl+F) with incremental find",
+          "Smart CWD tab inheritance and in-place renaming",
+          "24-bit truecolor terminal support (COLORTERM=truecolor)",
+          "Preflight Security Checker intercepting dangerous shell commands",
+          "Live Context Bar with CPU, RAM, Git branch, Local IP, and CWD telemetry",
+          "Eco Impact Engine tracking CO2 and water saved vs cloud LLMs",
+          "100% private offline local LLM integration via Ollama with zero cloud API keys required"
+        ]
       },
-      "featureList": [
-        "Split-pane terminal and local LLM chat",
-        "Multi-tab PTY terminal emulation with asynchronous channel batching",
-        "Preflight Security Checker for dangerous commands",
-        "Live Context Bar with CPU, RAM, Git branch, IP, and CWD telemetry",
-        "Eco Impact Engine tracking CO2 and water saved vs cloud LLMs",
-        "Saved Commands drawer with instant 1-click execution and TXT export",
-        "Direct offline local LLM integration with zero API keys required"
-      ]
-    }
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Termalime?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Termalime is a high-performance desktop cockpit built with Tauri 2.x and Rust that combines a full pseudo-terminal (PTY) emulator with an integrated offline local AI assistant running on Ollama."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Termalime send terminal commands or code to the cloud?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Termalime operates 100% offline and connects directly to your local Ollama instance on localhost:11434. No terminal output, prompt history, or telemetry is ever sent to third-party servers."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does the Preflight Security Checker work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "When you paste or execute a command from the AI, Termalime's hybrid engine scores its risk using token heuristics (detecting rm -rf, piped curl into sh, network sockets) and consults a local LLM security prompt before execution."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I install Termalime on Ubuntu or Debian?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You can download the official .deb package from GitHub Releases and run: sudo apt install ./Termalime_0.6.0_amd64.deb. Standalone AppImage and RPM bundles are also provided."
+            }
+          }
+        ]
+      }
+    ]
     </script>
   </head>
   <body>
+    <!-- Semantic No-Script Fallback for SEO, AI Crawlers, & No-JS Clients -->
+    <noscript>
+      <div class="noscript-container" style="max-width: 900px; margin: 40px auto; padding: 2rem; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #f5f7fa; background: #05060a; border-radius: 12px; border: 1px solid #10b981;">
+        <header>
+          <h1 style="color: #96ff3f; font-size: 2.2rem; margin-bottom: 0.5rem;">Termalime — The High-Performance Terminal with Built-in Local AI</h1>
+          <p style="font-size: 1.15rem; color: #a1a1aa; line-height: 1.6;">
+            Termalime is a free, 100% open-source desktop cockpit fusing a blazing-fast pseudo-terminal (PTY) emulator with an offline local AI copilot (powered by Ollama). Built on Tauri 2.x and Rust for zero latency, zero cloud subscription fees, and complete prompt privacy.
+          </p>
+        </header>
+
+        <section style="margin: 2rem 0;">
+          <h2 style="color: #38bdf8; font-size: 1.5rem;">✨ Latest Features in v0.6.0 Codename Bridge</h2>
+          <ul style="line-height: 1.8; color: #e4e4e7;">
+            <li><strong>Interactive AI Code Blocks:</strong> Direct action buttons on AI-generated shell snippets — <em>Run in Terminal</em> (safeguarded by Preflight), <em>Insert at Prompt</em>, and <em>Copy Code</em>.</li>
+            <li><strong>1-Click Output &amp; Error Diagnosis (Ctrl+Shift+E):</strong> Captures recent terminal tracebacks and diagnoses failure causes with proposed command fixes.</li>
+            <li><strong>In-Buffer Terminal Search (Ctrl+F):</strong> Integrated search overlay with incremental find, match navigation, and case-sensitivity toggle.</li>
+            <li><strong>Smart Tabs:</strong> New tabs automatically inherit current working directory (CWD) and support in-place renaming via double-click.</li>
+            <li><strong>24-Bit Truecolor Support:</strong> Native <code>COLORTERM=truecolor</code> support for modern tools (<code>bat</code>, <code>eza</code>, <code>starship</code>).</li>
+            <li><strong>Preflight Security Checker:</strong> Intercepts destructive commands (e.g., <code>rm -rf /</code>, piped <code>curl | sh</code>) before execution with AI-backed risk reasoning.</li>
+            <li><strong>Live Telemetry Context Bar:</strong> Real-time hardware telemetry (CPU, Memory), Git branch, local IP, and CWD.</li>
+          </ul>
+        </section>
+
+        <section style="margin: 2rem 0;">
+          <h2 style="color: #fbbf24; font-size: 1.5rem;">📦 Download &amp; Installation</h2>
+          <p style="color: #a1a1aa;">Termalime is available for Linux, macOS, and Windows. Download the latest binaries directly from GitHub Releases:</p>
+          <p>
+            <a href="https://github.com/daveymason/Termalime/releases/tag/v0.6.0" style="display: inline-block; padding: 10px 20px; background: #10b981; color: #000; font-weight: bold; border-radius: 6px; text-decoration: none;">Download Termalime v0.6.0 on GitHub Releases</a>
+          </p>
+          <h3 style="color: #ffffff; font-size: 1.1rem; margin-top: 1.5rem;">Linux Quick Install</h3>
+          <pre style="background: #090d16; padding: 1rem; border-radius: 8px; overflow-x: auto; color: #96ff3f;"><code># Ubuntu / Debian (.deb)
+sudo apt install ./Termalime_0.6.0_amd64.deb
+
+# Universal Linux (.AppImage)
+chmod +x Termalime_0.6.0_amd64.AppImage && ./Termalime_0.6.0_amd64.AppImage
+
+# Fedora / RHEL (.rpm)
+sudo rpm -i Termalime-0.6.0-1.x86_64.rpm</code></pre>
+        </section>
+
+        <section style="margin: 2rem 0;">
+          <h2 style="color: #cffd53; font-size: 1.5rem;">📖 Documentation &amp; AI Search Integration</h2>
+          <p style="color: #a1a1aa;">
+            Explore the <a href="/llms.txt" style="color: #38bdf8;">/llms.txt</a> standard documentation designed for AI search engines, agents, and LLMs, or visit our <a href="https://github.com/daveymason/Termalime" style="color: #38bdf8;">GitHub Repository</a> for source code.
+          </p>
+        </section>
+      </div>
+    </noscript>
+
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
