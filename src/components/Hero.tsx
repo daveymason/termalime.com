@@ -79,7 +79,7 @@ export const Hero: React.FC = () => {
             style={{ fontSize: "1.1rem", padding: "0.95rem 2.2rem" }}
           >
             <Download size={19} />
-            <span>Download v0.5.0</span>
+            <span>Download v0.6.0</span>
           </a>
         </div>
 

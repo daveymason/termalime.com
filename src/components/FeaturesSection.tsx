@@ -9,7 +9,11 @@ import {
   Layers,
   Monitor,
   Copy,
-  Sliders
+  Sliders,
+  Play,
+  Terminal,
+  Search,
+  Sparkles,
 } from "lucide-react";
 
 export const FeaturesSection: React.FC = () => {
@@ -62,6 +66,90 @@ export const FeaturesSection: React.FC = () => {
           <p>
             Standard terminal muscle paired with private local intelligence. No bloat, no cloud tracking.
           </p>
+        </div>
+
+        {/* Feature Spotlight: v0.6 Codename Bridge */}
+        <div
+          className="m3-card"
+          style={{
+            marginBottom: "3.5rem",
+            padding: "2rem",
+            background: "linear-gradient(145deg, #071911, #020b06)",
+            borderColor: "rgba(52, 211, 153, 0.35)",
+            boxShadow: "0 20px 60px rgba(0, 0, 0, 0.7), 0 0 30px rgba(0, 255, 145, 0.1)",
+          }}
+        >
+          <div style={{ textAlign: "center", maxWidth: "760px", margin: "0 auto 1.8rem" }}>
+            <span
+              style={{
+                fontSize: "0.72rem",
+                fontWeight: 700,
+                letterSpacing: "0.08em",
+                textTransform: "uppercase",
+                color: "var(--lime-bright)",
+                padding: "3px 10px",
+                borderRadius: "999px",
+                background: "rgba(52, 211, 153, 0.15)",
+                border: "1px solid rgba(52, 211, 153, 0.3)",
+              }}
+            >
+              NEW IN V0.6 • CODENAME: BRIDGE
+            </span>
+            <h3 style={{ fontSize: "1.8rem", margin: "10px 0 10px", color: "#fff" }}>
+              Fusing Terminal Muscle with AI Flow
+            </h3>
+            <p style={{ fontSize: "0.95rem", color: "var(--text-secondary)", margin: 0 }}>
+              Version 0.6 eliminates copy-paste friction with interactive execution actions, 1-click terminal error explanation, and instant buffer search.
+            </p>
+          </div>
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+              gap: "1.2rem",
+            }}
+          >
+            <div style={{ padding: "1.2rem", background: "rgba(0, 0, 0, 0.4)", borderRadius: "10px", border: "1px solid rgba(52, 211, 153, 0.2)" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px", color: "var(--lime-bright)" }}>
+                <Play size={18} />
+                <strong style={{ fontSize: "1rem" }}>Interactive Code Blocks</strong>
+              </div>
+              <p style={{ fontSize: "0.85rem", color: "var(--text-secondary)", margin: 0, lineHeight: "1.5" }}>
+                Every shell snippet generated in chat includes <strong>Run in Terminal</strong> (safeguarded by Preflight), <strong>Insert at Prompt</strong>, and <strong>Copy</strong> actions.
+              </p>
+            </div>
+
+            <div style={{ padding: "1.2rem", background: "rgba(0, 0, 0, 0.4)", borderRadius: "10px", border: "1px solid rgba(52, 211, 153, 0.2)" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px", color: "#38bdf8" }}>
+                <Sparkles size={18} />
+                <strong style={{ fontSize: "1rem" }}>1-Click Error Explainer</strong>
+              </div>
+              <p style={{ fontSize: "0.85rem", color: "var(--text-secondary)", margin: 0, lineHeight: "1.5" }}>
+                Press <strong>Ctrl+Shift+E</strong> or click <strong>Explain</strong> in the Context Bar. Termalime captures recent tracebacks and diagnoses errors with proposed fixes.
+              </p>
+            </div>
+
+            <div style={{ padding: "1.2rem", background: "rgba(0, 0, 0, 0.4)", borderRadius: "10px", border: "1px solid rgba(52, 211, 153, 0.2)" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px", color: "#fbbf24" }}>
+                <Search size={18} />
+                <strong style={{ fontSize: "1rem" }}>In-Buffer Search (Ctrl+F)</strong>
+              </div>
+              <p style={{ fontSize: "0.85rem", color: "var(--text-secondary)", margin: 0, lineHeight: "1.5" }}>
+                Native floating search bar over the xterm buffer supporting incremental find, case toggling, and match cycling.
+              </p>
+            </div>
+
+            <div style={{ padding: "1.2rem", background: "rgba(0, 0, 0, 0.4)", borderRadius: "10px", border: "1px solid rgba(52, 211, 153, 0.2)" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px", color: "#cffd53" }}>
+                <Terminal size={18} />
+                <strong style={{ fontSize: "1rem" }}>Smart Tabs &amp; Truecolor</strong>
+              </div>
+              <p style={{ fontSize: "0.85rem", color: "var(--text-secondary)", margin: 0, lineHeight: "1.5" }}>
+                New tabs automatically inherit current directory (CWD), tabs support in-place double-click renaming, and truecolor enables modern CLI themes.
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Feature Spotlight: The Rich Context Bar */}

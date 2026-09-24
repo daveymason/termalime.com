@@ -1,14 +1,29 @@
 import React from "react";
-import { Tag, Shield, Leaf, Cpu, Layers } from "lucide-react";
+import { Tag, Shield, Leaf, Cpu, Layers, Sparkles } from "lucide-react";
 
 export const ReleaseRoadmap: React.FC = () => {
   const releases = [
     {
-      version: "v0.5.0",
-      codename: "Eco",
+      version: "v0.6.0",
+      codename: "Bridge",
       tag: "LATEST RELEASE",
       isCurrent: true,
-      icon: <Leaf size={18} style={{ color: "var(--lime-bright)" }} />,
+      icon: <Sparkles size={18} style={{ color: "var(--lime-bright)" }} />,
+      highlights: [
+        "Interactive AI Code Blocks: Instant 'Run in Terminal' (guarded by Preflight), 'Insert at Prompt', and 'Copy' actions on generated snippets.",
+        "1-Click Output & Error Diagnosis: 'Explain' Context Bar button & Ctrl+Shift+E shortcut captures traces for instant root-cause analysis.",
+        "In-Buffer Terminal Search: Native Ctrl+F overlay with incremental find, previous/next match navigation, and case-sensitivity toggle.",
+        "Smart CWD Tab Inheritance: Newly spawned terminal tabs inherit the current working directory of the active session.",
+        "In-place Tab Renaming: Double-click any tab title to customize workflow labels.",
+        "24-Bit Truecolor: Enabled COLORTERM=truecolor output for modern CLI tools (bat, eza, starship).",
+      ],
+    },
+    {
+      version: "v0.5.0",
+      codename: "Eco",
+      tag: "ECO TELEMETRY",
+      isCurrent: false,
+      icon: <Leaf size={18} style={{ color: "#34d399" }} />,
       highlights: [
         "Eco Impact Engine: Live CO₂ and water savings telemetry in Context Bar and Settings.",
         "Lifetime eco totals with per-session tracking and reset functionality.",

@@ -9,9 +9,9 @@ export const DownloadCTA: React.FC = () => {
   const releaseUrl = "https://github.com/daveymason/Termalime/releases";
 
   const commands = {
-    deb: "sudo apt install ./Termalime_0.5.0_amd64.deb",
-    appimage: "chmod +x Termalime_0.5.0_amd64.AppImage && ./Termalime_0.5.0_amd64.AppImage",
-    rpm: "sudo rpm -i Termalime-0.5.0-1.x86_64.rpm",
+    deb: "sudo apt install ./Termalime_0.6.0_amd64.deb",
+    appimage: "chmod +x Termalime_0.6.0_amd64.AppImage && ./Termalime_0.6.0_amd64.AppImage",
+    rpm: "sudo rpm -i Termalime-0.6.0-1.x86_64.rpm",
     source: "git clone https://github.com/daveymason/Termalime.git\ncd Termalime\nnpm install\nnpm run tauri build",
   };
 
@@ -63,7 +63,7 @@ export const DownloadCTA: React.FC = () => {
           <div style={{ display: "inline-flex", alignItems: "center", gap: "10px", marginBottom: "1.2rem" }}>
             <img src="/assets/key-icon.png" alt="Termalime icon" width="48" height="48" style={{ borderRadius: "10px" }} />
             <div style={{ textAlign: "left" }}>
-              <h3 style={{ margin: 0, fontSize: "1.5rem", color: "#fff" }}>Termalime v0.5.0 "Eco"</h3>
+              <h3 style={{ margin: 0, fontSize: "1.5rem", color: "#fff" }}>Termalime v0.6.0 "Bridge"</h3>
               <p style={{ margin: 0, fontSize: "0.85rem", color: "var(--lime-bright)" }}>
                 Latest Stable Release • Linux, macOS &amp; Windows
               </p>
